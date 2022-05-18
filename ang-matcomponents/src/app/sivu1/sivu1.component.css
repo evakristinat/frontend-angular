@@ -1,0 +1,46 @@
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+mat-tab-group {
+  grid-column: 2;
+  padding: 2%;
+  height: 100px;
+  font-size: 0.5em;
+}
+
+.mat-card{
+  margin-bottom: 2%;
+}
+
+.mat-expansion-panel{
+  height: 100px;
+}
+
+.mat-expansion-panel-header{
+  height: 100%;
+}
+
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  height: 92vh;
+}
+
+.grid-item {
+  text-align: center;
+  padding: 2%;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .grid-container{
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,14 @@
+.container{
+  padding: 4%;
+  padding-bottom: 0%;
+  height: 90vh
+}
+
+mat-form-field {
+  width: 80%;
+
+}
+
+mat-vertical-stepper {
+  height: 35%;
+}
