@@ -1,0 +1,9 @@
+<!-- Komponentin View eli näkymä käyttäjälle.
+Sisältää käyttöliittymän sovelluslogiikaa,
+joka tuodaan angularin omilla käskyillä -->
+<p *ngIf="product.price > 700">
+  <button (click)="notify.emit()">Notify Me</button>
+</p>
+<!--Napin klikkaus on sidottu notify-muuttujaan, jossa on
+EventEmitter. Se lähettää klikkauksen eteenpäin. Äitikomponentin
+metodia kutsutaan lapsikomponentissa-->

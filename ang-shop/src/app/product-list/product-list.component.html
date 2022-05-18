@@ -1,0 +1,40 @@
+<!--Listassa on kaksi komponenttien välistä kommunikaatiotapahtumaa
+1. välitetään product -data äitikomponentilta lapselle
+2. välitetään click -event lapselta äitikomponentille-->
+
+<h2>Products</h2>
+<!--*ngFor on iteraatiodirektiivi (kuten for)
+jolla käydään läpi products-taulukko ja poimitaan
+tuoteoliot-->
+<div *ngFor="let product of products">
+  <h3>
+    <!--sidotaan luokan muuttujan arvo htmllään
+  data binding eli interpolation binding.
+hakasulut ovar property binding, jolla sidotaan
+luodasta tuleva product.name HTML:n attribuuttiin.
+[routerlink] on angularin sisäisten linkkien href 
+eli linkkiattribuutti. Linkki on dynaaminen, joten sen on
+oltava heittomerkkien sisällä ja routerlink merkattava haka-
+sulkeisiin-->
+    <a [title]="product.name + 'details'" [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <!--*ngIf tarkoittaa, että jos kuvaus(product.description)
+   löytyy, se lisätään tähän-->
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+  <!-- () eventbinding eli hiiren klikkaus sidotaan luokan
+share-metodiin, joka ajetaan napin painalluksella-->
+  <button (click)="share()">
+    Share
+  </button>
+  <!--[] property binding sitoo äitikomponentin product-muuttujan
+lapsikomponentin product-muuttujaan, eli välittää tuotedatan
+lapsikomponentille. -->
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
+
+</div>

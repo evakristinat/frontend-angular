@@ -1,0 +1,12 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+  <h3>{{ product.name }}</h3>
+  <!-- pystyviivan perässä on filtteri eli pipe, joka tekee
+  pystyviivaa edeltävälle tiedolle muutoksen. Tässä tapauksessa
+  muuttaa numeron valuutaksi. Oletuksena dollari. Muita rahayksikköja
+  saa lisäargumenteilla-->
+  <h4>{{ product.price | currency }}</h4>
+  <p>{{ product.description }}</p>
+
+</div>
