@@ -1,0 +1,9 @@
+<!--Tämä on me-komponentin näkymä-->
+<img src="assets/img/me.png" alt="minä" width="400">
+<p>Info</p>
+<ul>
+  <!--Tämä toistaa for-rakenteella listan kohtia-->
+  <li *ngFor="let data of mydatas">
+    {{data.info}}
+  </li>
+</ul>

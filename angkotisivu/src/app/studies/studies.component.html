@@ -1,0 +1,8 @@
+<!--Tämä on studies-komponentin näkymä-->
+<p>Tämänhetkiset opinnot:</p>
+<ul>
+  <!--Tämä toistaa for-rakenteella listan kohtia-->
+  <li *ngFor="let data of studiesdata">
+    {{data.info}}
+  </li>
+</ul>

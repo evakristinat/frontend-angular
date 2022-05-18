@@ -1,0 +1,16 @@
+<nav mat-tab-nav-bar>
+  <!-- routerLink on Angularin direktiivi. Kertoo selaimelle,
+  että tämä ei ole tavallinen linkki hrefin kanssa vaan angularin 
+reitti.
+
+routerLinkActive -direktiivi seuraa onko routerLink isActive. Tieto 
+välitetään jokaiselle Tabille joilla on on omat #-merkillä merkatut id:t.
+Tabin isActive -ominaisuus sidotaan property bindingilla linkin (a) active-
+ominaisuuteen. Kun Tab muuttuu sitä klikattaessa tilaan isActive, muuttuu
+linkki samalla tilaan active. mat-tab-nav-bar ja mat-tab-link -CSS-efektit
+toimivat sen perusteella onko linkki active.
+-->
+<a mat-tab-link routerLink="/me" routerLinkActive #meTab="routerLinkActive" [active]="meTab.isActive" >Minä</a> 
+<a mat-tab-link routerLink="/studies" routerLinkActive #hobTab="routerLinkActive" [active]="hobTab.isActive">Opinnot</a> 
+<a mat-tab-link routerLink="/hobbies" routerLinkActive #studTab="routerLinkActive" [active]="studTab.isActive" >Harrastukset</a>
+</nav>

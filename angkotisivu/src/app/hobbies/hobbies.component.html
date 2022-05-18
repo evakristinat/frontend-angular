@@ -1,0 +1,8 @@
+<!--Tämä on hobbies-komponentin näkymä-->
+<p>Tämänhetkiset harrastukset:</p>
+<ul>
+  <!--Tämä toistaa for-rakenteella listan kohtia-->
+  <li *ngFor="let data of hobbiesdata">
+    {{data.info}}
+  </li>
+</ul>
