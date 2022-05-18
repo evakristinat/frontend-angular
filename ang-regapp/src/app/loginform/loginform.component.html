@@ -1,0 +1,25 @@
+<h3>Sisäänkirjautuminen</h3>
+
+<!-- 
+Angularin template-driven form, jonka nimi on f.
+Inputeissa olevat ngModel -direktiivit liittävät 
+inputit angularin tietomalliin eli ne välittyvät
+TS-luokkaan.
+f.value on olio, joka sisältää kaikki lomakkeen tiedot
+avain-arvo -pareina.
+f.valid kertoo onko lomake validi (true tai false)
+-->
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value, f.valid)">
+  <label>Tunnus:</label>
+  <input type="text" class="form-control" name="username" ngModel required>
+  <span [className]="!f.form.hasError('required', 'username') || f.pristine ? 'hide' : 'visible'" >Tunnus vaaditaan</span>
+  <!-- jos lomakkeella ei ole reguired-virhettä tai se on koskematon, span on piilotettu -->
+  <label>Salasana:</label>
+  <input #password="ngModel" class="form-control" type="password" name="password" ngModel required minlength="5">
+  <span [className]="!f.form.hasError('required', 'password') || password.pristine ? 'hide' : 'visible'">Salasana vaaditaan</span>
+  <span [className]="!f.form.hasError('minlength', 'password') ? 'hide' : 'visible'">Salasana on liian lyhyt</span>
+  <!-- jos lomakkeella ei ole reguired- tai minlength-virhettä tai se on koskematon, span on piilotettu -->
+  <button type="submit" [disabled]="f.invalid">Lähetä</button>
+  <span *ngIf="error">{{error}}</span>
+</form>

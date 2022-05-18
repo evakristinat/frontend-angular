@@ -1,0 +1,17 @@
+<!-- alapuolelle tulee sankarin yksityiskohdat, jos sankari on valittu-->
+<div *ngIf="hero">
+<!--Nämä hero-tiedot tulevat heroes-komponentin selectedHero-propertystä
+Tässä myös filtteröidään nimitieto uppercase-muotoon, ennenkuin se näytetään-->
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label>name:
+      <!--2. kaksisuuntainen sidonta, joka mahdollistaa nimien päivittämisen,
+      jolloin ne päivittyvät näkymän lisäksi propertyinä-->
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+    </label>
+  </div>
+  <!--Event-binding, jossa sidotaan klikkaus goBack-funktioon-->
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

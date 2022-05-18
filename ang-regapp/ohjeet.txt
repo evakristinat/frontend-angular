@@ -1,0 +1,12 @@
+1. luodaan projekti ja komponentit
+2. reititys
+3. loginform ja sen toiminnan kokeilu
+4. in-memory-database jossa on tunnarit 
+sisäänkirjautumista varten ja ilmoittautumisdata.
+5. authservice jossa kirjautumiseen liittyvät palvelut
+6. loginguard, joka päästää regform-näkymään jos isloggedin-muuttuja
+authservicessä on arvoltaan true. 
+7. regservice joka palvelee regform- ja reglist -komponentteja
+8. regform- ja reglist-komponentit valmiiksi
+9. authservicen isloggedin- muuttujan arvo välitetään navbariin jotta
+voidaan vaihtaa login-linkki logoutiksi ja toisinpäin.

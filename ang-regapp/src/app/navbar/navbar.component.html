@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <a class="navbar-brand" href="#/">Ilmoittautuminen</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="reglist">Ilmoittautuneet</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" routerLink="regform">Ilmoittautumislomake</a>
+      </li>
+      <li class="nav-item">
+        <span *ngIf="this.authService.isLoggedIn === false"><a class="nav-link"
+            routerLink="loginform">Sisäänkirjautuminen</a></span>
+        <span *ngIf="this.authService.isLoggedIn === true"><a class="nav-link" routerLink="loginform"
+            (click)="logOut()">Uloskirjautuminen</a></span>
+      </li>
+    </ul>
+  </div>
+</nav>

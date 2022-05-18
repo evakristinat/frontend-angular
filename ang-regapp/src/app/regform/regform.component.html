@@ -1,0 +1,17 @@
+<h3>Ilmoittautuminen</h3>
+
+<form>
+  <div class="form-group">
+  <label>Nimi:
+    <input class="form-control" type="text" #regName />
+  </label>
+  <label>Sähköposti:
+    <input class="form-control" type="email" #regEmail />
+  </label>
+  <!-- klikkaus siirtää uuden arvon add-metodille ja tyhjentää inputin -->
+  <button (click)="add(regName.value, regEmail.value); 
+  regName.value=''; regEmail.value=''">
+    Ilmoittaudu
+  </button>
+</div>
+</form>

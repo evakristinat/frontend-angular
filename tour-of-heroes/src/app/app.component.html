@@ -1,0 +1,15 @@
+<!-- 1. interpolation binding. Bindataan luokan muuttuja HTML:lään-->
+<h1>{{title}}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <!-- RouterLink muuttaa klikkaukset navigaatioiksi, joten tätä klikkaamalla
+  Käyttäjä pääsee heroes-näkymään, koska osoitteeseen lisätään silloin /heroes.-->
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<!-- Korvataan heroes-komponentti routing-outletilla. Heroes-komponenttia
+ei tarvitse enää nimetä erikseen, koska router ohjaa sisällön nyt oikeaan
+paikkaan. Router-oulet kertoo oikean kohdan routatulle näkymälle. 
+Tämä on mahdollista app-komponentissa, koska router-moduuli importattiin
+automaattisesti app.module.ts -tiedostoon.-->
+<router-outlet></router-outlet>
+<app-messages></app-messages>

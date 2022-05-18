@@ -1,0 +1,23 @@
+<h2>My Heroes</h2>
+<div>
+  <!--sankarin lisäys-->
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- klikkaus siirtää uuden arvon add-metodille ja tyhjentää inputin -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
+<ul class="heroes">
+  <!--ngfor on anngularin sisäänrakennettu iteraatiodirektiivi-->
+  <li *ngFor="let hero of heroes">
+    <!--Tämä routerlink johtaa hero-detail-komponenttiin. Hero-tiedot
+    tulevat hero servicestä.-->
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero"
+    (click)="delete(hero)">x</button>
+  </li>
+</ul>

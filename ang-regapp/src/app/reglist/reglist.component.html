@@ -1,0 +1,20 @@
+<h2> Ilmoittautuneet </h2>
+
+<div>
+  <table class="table">
+    <thead>
+      <th scope="col">Nimi</th>
+      <th scope="col">Sähköposti</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reg of regs">
+    <td>
+      {{reg.name}}
+    </td>
+    <td>
+      {{reg.email}}
+    </td>
+  </tr>
+  </tbody>
+  </table>
+</div>

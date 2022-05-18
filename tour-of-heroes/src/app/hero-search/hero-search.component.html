@@ -1,0 +1,24 @@
+
+<!--Näyttää hakutulokset-->
+<div id="search-component">
+  <h4><label for="search-box">Hero Search</label></h4>
+
+<!--Tässä käytetään angularin event binding -syntaksia, joka on 
+<element (event)="statement()"><element>-->
+  <!--Syöte menee automaattisesti search-metodin parametriksi,
+joka muuttaa sen uudeksi arvoksi (observableksi) subjekti 
+searchtermssiin, joka määritettiin luokassa.-->
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <!--ngFor-direktiivi toistaa jälleen hero-objekteja, mutta tällä kertaa 
+    heroes on merkitty heroes$, koska heroes on observable, ei taulukko.
+    Async-pipe tekee automaattisesti subsriben observableen, jotta sitä voidaan
+    tarkastella. Näin sitä ei tarvitse määrittää enää muualla.-->
+    <li *ngFor="let hero of heroes$ | async" >
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>

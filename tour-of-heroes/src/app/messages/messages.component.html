@@ -1,0 +1,10 @@
+<!--Viestit näytetään vain, jos viestejä on-->
+<div *ngIf="messageService.messages.length">
+
+  <h2>Messages</h2>
+  <!--click on sidottu event-bindingina messageservicen clear-metodiin-->
+  <button class="clear" (click)="messageService.clear()">Clear</button>
+<!--Listataan kaikki viestit diveissä-->
+  <div *ngFor='let message of messageService.messages'> {{message}} </div>
+
+</div>
